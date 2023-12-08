@@ -1,0 +1,75 @@
+/* <form action="/register-form" method="post">
+{% csrf_token %}
+<input type="text" name="name" placeholder="name">
+<input type="text" name="alias" placeholder="alias">
+<input type="text" name="email" placeholder="email">
+<input type="password" name="password" placeholder="password">
+<input type="password" name="confirm_password" placeholder="confirm password">
+<input type="submit" value="register">
+</form>
+
+<!-- login form  -->
+<form action="/login-form" method="post">
+<input type="text" name="email" placeholder="email">
+<input type="password" name="password" placeholder="password">
+<input type="submit" value="login">
+</form> */
+
+/* style for the upper form */
+
+form{
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #eee;
+}
+input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="submit"]{
+    background: #28d;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+}
+input[type="submit"]:hover{
+    background: #17c;
+    transition: .6s;
+}
+input[type="text"]:hover{
+    background: #fff;
+    transition: .6s;
+}
+input[type="password"]:hover{
+    background: #fff;
+    transition: .6s;
+}
+input[type="text"]:focus{
+    background: #fff;
+    transition: .6s;
+}
+input[type="password"]:focus{
+    background: #fff;
+    transition: .6s;
+}
+input[type="text"]:focus{
+    border: 1px solid #28d;
+    transition: .6s;
+}
+input[type="password"]:focus{
+    border: 1px solid #28d;
+    transition: .6s;
+}
+input[type="submit"]:focus{
+    border: 1px solid #28d;
+    transition: .6s;
+}
+/* Path: app1/statics/style.css */
+

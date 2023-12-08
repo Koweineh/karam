@@ -1,0 +1,43 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- add style from statics style.css -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- show all the information about the book -->
+    <div class="book-info text-center   ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h3 class="text-center">Book Title</h3>
+                    <h3>{{ book.title }}</h3>
+                    <h3>Book Author</h3>
+                    <h3>{{ book.author }}</h3>
+                    <h3>Book Reviews</h3>
+                    {% for review in reviews %}
+                    <h3>{{ review.user.name }}: {{ review.review }} : {{review.rate}}</h3>
+
+                    {% endfor %}
+                    <h3>Book Rating</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- add review form -->
+    <form action="/add-review/{{ book.id }}" method="post">
+        {% csrf_token %}
+        <textarea name="review" placeholder="review"></textarea>
+        <input type="number" name="rating" placeholder="rating">
+        <input type="submit" value="add review">
+    </form>
+    <a href="/books">go back</a>
+</body>
+</html>
